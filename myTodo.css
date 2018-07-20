@@ -1,0 +1,78 @@
+body{
+	background-image: url('BackgroundTodo.jpg');
+}
+
+div{
+			height: 100%;
+			width: 400px;
+			background:#6CDF58;
+			border: 10px solid white;
+			color: white;
+			margin-left: 38%;
+			margin-top: 10%;
+			cursor: pointer;
+
+		}
+	
+		#txtInput{
+			border: 5px solid white;
+			margin-top: 10%;
+		}
+		
+				#myDiv{
+			background-color: red;
+			color: white;
+			border: 5px solid white;
+			width: 250px;
+			height: 100%;
+			margin-left: 18%;
+			margin-top: 2%;
+			overflow: auto;
+		}
+		
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+p{
+	margin-left: 20%;
+	font-family: sans-serif;
+	text-transform: capitalize;
+	word-spacing: 2px;
+}
+
+#bbox{
+	
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	display:flex;
+
+}
+
+.visual{
+	opacity: 1 !important;
+	border-radius: 10px;
+}
+
+label{
+		text-decoration:none;
+
+}
+
+h4{
+	margin-top: 2%;
+	text-decoration: underline;
+	letter-spacing: 2px;
+	word-spacing:2px;
+	font-weight: normal;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+ul{
+	margin-right: 10%;
+}
+
+input{
+	cursor: pointer;
+}
