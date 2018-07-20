@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TodoList</title>
+
+	<link rel="stylesheet" type="text/css" href="myTodo.css">
+	<link rel="stylesheet" type="text/css" href="Default.css">
+
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+	
+	<script type="text/javascript">
+
+//javascript function for add todo list!
+
+		function myTodo(){
+	if(document.getElementById("txtInput").value!="" && document.getElementById("date&time").value!=""){
+		
+setTimeout(function(){document.getElementById("txtInput").value="";},100);
+
+
+		var getValue=document.getElementById("txtInput").value;
+		var myArray=[];
+		myArray.push(getValue);
+		
+var p=document.createElement('p');
+p.setAttribute('id','bbox');
+
+
+var checkbox=document.createElement('input');
+checkbox.setAttribute('type','checkbox');
+checkbox.setAttribute('id','box');
+
+var label=document.createElement('label');
+var val=document.createTextNode(getValue);
+label.appendChild(val);
+
+var dateAndTime=document.getElementById("date&time").value;
+var myText=document.createTextNode("Date & Time-"+dateAndTime);
+br=document.createElement('br');
+label.appendChild(br);
+//to create a line break between todo and time!
+
+label.appendChild(myText);
+
+p.appendChild(checkbox);
+p.appendChild(label);
+
+var ul=document.createElement('ul');
+var li=document.createElement('li');
+li.appendChild(p);
+ul.appendChild(li);
+
+// to add ul element at first!
+
+		var span=document.getElementById("hide");
+		span.insertBefore(ul,span.childNodes[0]);
+
+//Timeout function to display added items smoothly!
+
+	setTimeout(() => {
+			p.className='visual';
+		},2);
+
+
+	}
+
+}
+
+</script>
+	
+	<script>	
+
+//jquery script for delete todos!
+
+		$(document).ready(function(){
+		$("#del").click(function(){
+			$("input:checkbox").each(function(){
+				if($(this).is(":checked")){
+					$(this).parent().parent().remove();
+				}
+			});
+			
+		});
+});
+
+	</script>
+
+	<script type="text/javascript">
+
+		// jquery script for appling styling for checked and unchecked checkbox!
+
+			$(document).ready(function(){
+						$(this).change(function(){
+								$("input:checkbox").each(function(){
+									if($(this).is(":checked")){
+										$(this).parent().css({"text-decoration":"line-through"});
+																}
+				
+									else{
+											$(this).parent().css({"text-decoration":"none"});
+										}
+				
+				});
+
+		});
+
+});
+			
+	</script>
+
+</head>
+<body>
+<div>
+	
+	<center><input type="text" id="txtInput" placeholder="Add Todo"></center>
+	<br>
+	<center><input type="datetime-local" id="date&time"></center>
+	<br>
+	<center><button type="submit" onclick="myTodo()"  class="btn btn--sm btn--red">Add</button></center>
+	<br>
+	
+		<div id="myDiv">
+			
+			<center><h4>Add Todos</h4></center>
+
+			<span id="hide"></span>
+
+		</div>	
+	
+	<br>
+	<center>
+		<button type="submit" id="del" class="btn btn--sm btn--red">Delete</button>
+	</center>
+
+
+	<center><p style="overflow: hidden;"></p></center>
+	
+</div>
+</body>
+</html>	
