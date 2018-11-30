@@ -8,9 +8,21 @@
 
 	<script type="text/javascript" src="jquery-3.3.1.js"></script>
 	
-	<script type="text/javascript">
+    <script type="text/javascript">
+                var month1=document.getElementById('month');
+              var day1=document.getElementById('day');
+              for(var j=0;j<month1.length;j++){
+            if(month1.options[j].value=='1'){
+                for(var i=0;i<day1.length;i++){
+		if(day1.options[i].value=='31'){
+			day1.remove(i);
+		}
+	}
+    }
+              }
+	
 
-               //javascript function for add todo list!
+//javascript function for add todo list!
 
 		function myTodo(){
 				var month=document.getElementById('month').value;
@@ -20,6 +32,7 @@
                 var hour=document.getElementById('hour').value;
                 var minute=document.getElementById('minute').value;
                 var section=document.getElementById('section').value;
+			//
 
 	if(document.getElementById("txtInput").value!="" && month!="" && day!="" && year!=""){
 		if(hour!="" && minute!="" && section!=""){
@@ -79,8 +92,6 @@ ul.appendChild(li);
 
 	}
     else{
-            //fade out function for notification message
-            
             var notify=document.createTextNode("Please Fill Up All The Details");
             paragraph=document.createElement('h6');
 
@@ -94,8 +105,6 @@ ul.appendChild(li);
     }
 	}
     else{
-            //fade out function for notification message
-
             var notify=document.createTextNode("Please Fill Up All The Details");
             paragraph=document.createElement('h6');
 
